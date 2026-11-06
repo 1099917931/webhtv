@@ -1560,4 +1560,21 @@
     <string name="dialog_tmdb_all_sites">All sources</string>
     <string name="dialog_tmdb_site_manage">Select sources</string>
     <string name="dialog_tmdb_reset_default">Reset to default</string>
+    <string name="tmdb_cast_label">Cast</string>
+    <string name="tmdb_powered_by">Powered by TMDB</string>
+    <string name="tmdb_photos_label">Backdrops</string>
+    <string name="tmdb_crew_label">Crew</string>
+    <string name="tmdb_recommendations_label">You May Like</string>
+    <string name="detail_work_searching">Searching current source for %1$s...</string>
+    <string name="detail_work_global_searching">No current-source result. Searching all sites for %1$s...</string>
+    <string name="detail_image_save">Save</string>
+    <string name="detail_image_saving">Saving image...</string>
+    <string name="detail_image_save_success">Saved to: %1$s</string>
+    <string name="detail_image_save_failed">Image save failed</string>
+    <string name="detail_image_permission_denied">Storage permission denied</string>
+
+    <string name="detail_tmdb_photos">剧照</string>
+    <string name="detail_no_overview">暂无简介</string>
+    <string name="detail_image_rotate">旋转</string>
+    <string name="tmdb_external_links_label">外部链接</string>
 </resources>

@@ -82,4 +82,11 @@
         <item name="backgroundTint">#174EA6</item>
     </style>
 
+    <style name="DialogFullScreen" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
 </resources>

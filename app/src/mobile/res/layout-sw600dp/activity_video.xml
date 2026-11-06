@@ -488,6 +488,7 @@
                 android:fillViewport="true">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/nativeContentContainer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipChildren="false"
@@ -576,6 +577,7 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
+                            android:id="@+id/flagText"
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/Video.ContextText"
                             android:layout_width="wrap_content"
@@ -630,6 +632,7 @@
                         android:visibility="gone"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:visibility="visible" />
+                        android:id="@+id/episodeTitleBar"
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
