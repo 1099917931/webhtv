@@ -70,9 +70,9 @@ public class TmdbCastAdapter extends RecyclerView.Adapter<TmdbCastAdapter.ViewHo
             name.setText(person.getName());
             role.setText(person.getSubtitle());
             if (person.getProfileUrl() != null && !person.getProfileUrl().isEmpty()) {
-                Glide.with(profile.getContext()).load(person.getProfileUrl()).into(profile);
+                Glide.with(profile.getContext()).load(person.getProfileUrl()).placeholder(R.drawable.ic_tmdb_person_placeholder).error(R.drawable.ic_tmdb_person_placeholder).into(profile);
             } else {
-                profile.setImageResource(R.color.black);
+                profile.setImageResource(R.drawable.ic_tmdb_person_placeholder);
             }
 
             if (listener != null) {
