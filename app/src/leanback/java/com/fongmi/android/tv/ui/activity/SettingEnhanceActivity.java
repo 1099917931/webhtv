@@ -113,7 +113,7 @@ public class SettingEnhanceActivity extends BaseActivity {
                 mBinding.driveCheck,
                 mBinding.siteHealthSort,
                 mBinding.debugLog,
-                mBinding.playbackWebhook
+                mBinding.playbackWebhook,
                 mBinding.tmdbSource
         };
         for (View view : order) parent.removeView(view);
