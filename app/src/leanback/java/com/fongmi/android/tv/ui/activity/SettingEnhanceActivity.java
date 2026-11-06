@@ -92,6 +92,7 @@ public class SettingEnhanceActivity extends BaseActivity {
         }));
         mBinding.loginState.setOnClickListener(view -> LoginStateLearnDialog.show(this, this::setText));
         mBinding.oneKeySync.setOnClickListener(v -> OneKeySyncDialog.create().show(this));
+        mBinding.tmdbSource.setOnClickListener(this::setTmdbSource);
     }
 
     private void reorderItems() {
@@ -113,6 +114,7 @@ public class SettingEnhanceActivity extends BaseActivity {
                 mBinding.siteHealthSort,
                 mBinding.debugLog,
                 mBinding.playbackWebhook
+                mBinding.tmdbSource
         };
         for (View view : order) parent.removeView(view);
         for (View view : order) parent.addView(view);
@@ -122,6 +124,7 @@ public class SettingEnhanceActivity extends BaseActivity {
         if (!canSetText()) return;
         safeSet("driveCheck", mBinding.driveCheckText, () -> getSwitch(Setting.isDriveCheck()));
         safeSet("debugLog", mBinding.debugLogText, () -> getSwitch(Setting.isDebugLog()));
+        safeSet("tmdbSource", mBinding.tmdbSourceText, () -> getSwitch(Setting.isTmdbEnabled()) + (Setting.isTmdbReady() ? " · 已配置" : " · 未配置"));
         safeSet("siteHealthSort", mBinding.siteHealthSortText, () -> getSwitch(Setting.isSiteHealthSort()));
         safeSet("webHomeExtension", mBinding.webHomeExtensionText, () -> {
             WebHomeExtensionRegistry.Snapshot webHomeExtension = WebHomeExtensionRegistry.get().snapshot();
@@ -193,6 +196,10 @@ public class SettingEnhanceActivity extends BaseActivity {
 
     private interface TextSupplier {
         CharSequence get();
+    }
+
+    private void setTmdbSource(View view) {
+        com.fongmi.android.tv.ui.dialog.TmdbSourceDialog.create(this).onDismiss(this::setText).show();
     }
 
     private void setDriveCheck(View view) {

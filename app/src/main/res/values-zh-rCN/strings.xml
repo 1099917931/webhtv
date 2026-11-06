@@ -1536,4 +1536,20 @@
 
     <string name="player_audio_badge_queue">队列</string>
     <string name="player_audio_repeat">循环</string>
+    <string name="setting_tmdb_source">TMDB 元数据配置</string>
+    <string name="dialog_tmdb_api_key_label">TMDB API Key 或 Access Token</string>
+    <string name="dialog_tmdb_api_key_hint">输入 API Key 或 v4 Access Token</string>
+    <string name="dialog_tmdb_api_key_tip">免费获取 API Key: https://www.themoviedb.org/settings/api</string>
+    <string name="dialog_omdb_api_key_label">OMDb API Key（可选，用于 IMDb 评分）</string>
+    <string name="dialog_omdb_api_key_hint">输入 OMDb API Key</string>
+    <string name="dialog_omdb_api_key_tip">免费获取 API Key（每天1000次）: https://www.omdbapi.com/apikey.aspx</string>
+    <string name="dialog_tmdb_enable_label">启用 TMDB 元数据增强</string>
+    <string name="dialog_tmdb_enable_tip">为视频详情页自动匹配并补充 TMDB 简介、演员、评分等信息</string>
+    <string name="dialog_tmdb_enabled_sites_label">启用站点规则</string>
+    <string name="dialog_tmdb_disabled_sites_label">已排除站点</string>
+    <string name="dialog_tmdb_add_rule_hint">添加关键词或站点…</string>
+    <string name="dialog_tmdb_add">添加</string>
+    <string name="dialog_tmdb_all_sites">全部站点</string>
+    <string name="dialog_tmdb_site_manage">选择站点</string>
+    <string name="dialog_tmdb_reset_default">恢复默认</string>
 </resources>

@@ -1289,6 +1289,26 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
         mBinding.progressLayout.showEmpty();
     }
 
+    // TMDB 海报补全（方案 A）：仅当源站无海报、TMDB 已启用且已填 Key 时，按片名搜索 TMDB 补海报
+    private com.fongmi.android.tv.ui.helper.TmdbUIAdapter mTmdbUIAdapter;
+
+    private void initTmdbMode() {
+        if (!Setting.isTmdbEnabled()) return;
+        mTmdbUIAdapter = new com.fongmi.android.tv.ui.helper.TmdbUIAdapter(this);
+        if (!mTmdbUIAdapter.isReady()) {
+            SpiderDebug.log("TMDB 增强已启用，但配置未就绪（需要 API Key）");
+        }
+    }
+
+    private void checkTmdbPoster(Vod item) {
+        if (item == null || !TextUtils.isEmpty(item.getPic())) return;
+        if (mTmdbUIAdapter == null) initTmdbMode();
+        if (mTmdbUIAdapter == null || !mTmdbUIAdapter.isReady()) return;
+        com.fongmi.android.tv.bean.Site site = getSite();
+        if (site != null && !Setting.isTmdbSiteEnabled(site.getKey(), site.getName())) return;
+        mTmdbUIAdapter.autoMatch(item.getName(), item);
+    }
+
     private void setDetail(Vod item) {
         if (service() == null) {
             mPendingDetailVod = item;
@@ -1307,6 +1327,7 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
         checkKeepImg();
         setText(item);
         updateKeep();
+        checkTmdbPoster(item);
     }
 
     private void setText(Vod item) {

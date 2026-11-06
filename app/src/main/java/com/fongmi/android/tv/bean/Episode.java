@@ -25,6 +25,7 @@ public class Episode implements Parcelable, Diffable<Episode> {
     private int index;
     private int number;
     private boolean selected;
+    private TmdbEpisode tmdbEpisode;  // TMDB 集数详情
     private transient String displayName;
 
     private Episode(String name, String desc, String url) {
@@ -103,6 +104,14 @@ public class Episode implements Parcelable, Diffable<Episode> {
 
     public void deselect() {
         setSelected(false);
+    }
+
+    public TmdbEpisode getTmdbEpisode() {
+        return tmdbEpisode;
+    }
+
+    public void setTmdbEpisode(TmdbEpisode tmdbEpisode) {
+        this.tmdbEpisode = tmdbEpisode;
     }
 
     public int getScore(String name, int number) {
